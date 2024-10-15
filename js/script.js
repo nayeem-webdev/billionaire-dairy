@@ -160,6 +160,7 @@ const showPerson = (event) => {
           modalContainer.innerHTML = "";
           modalContainer.appendChild(div);
           modalContainer.classList.remove("hidden");
+          modalContainer.classList.add("flex");
         }
       });
     } catch (error) {
@@ -174,6 +175,7 @@ const showPerson = (event) => {
 const closeModal = () => {
   const modalContainer = document.getElementById("billionaire-modal");
   modalContainer.classList.add("hidden");
+  modalContainer.classList.remove("flex");
 };
 
 const callAllBillon = () => {
@@ -186,70 +188,3 @@ const callAllBillon = () => {
     );
   }, 3000);
 };
-
-// const showDetails = (e) => {
-//   let id = e.currentTarget.id;
-//   console.log(e.currentTarget);
-
-//   const fetchTheFilter = async () => {
-//     try {
-//       const response = await fetch(
-//         "https://forbes400.onrender.com/api/forbes400/getAllBillionaires"
-//       );
-//       const data = await response.json();
-//       let elon = data.find((person) => person.uri === "elon-mask");
-//       console.log(elon);
-//     } catch (error) {
-//       console.log("ERROR: ", error);
-//     } finally {
-//       console.log("All Data Fetched");
-//     }
-//   };
-//   fetchTheFilter();
-//   console.log(id);
-// };
-
-// const showDetails = (e) => {
-//   // Extract the 'id' of the clicked element
-//   let id = e.currentTarget.id;
-//   console.log("Clicked ID: ", id);
-
-//   // Extract the URI (assuming the ID structure is like 'elon-mask-123')
-//   let uriToSearch = id.split("-")[0]; // Get the part before the hyphen
-//   console.log("URI to search for: ", uriToSearch);
-
-//   const fetchTheFilter = async () => {
-//     try {
-//       // Fetch all the billionaires data from the API
-//       const response = await fetch(
-//         "https://forbes400.onrender.com/api/forbes400/getAllBillionaires"
-//       );
-//       const data = await response.json();
-
-//       // Log all the data to inspect its structure
-//       console.log("API Data: ", data);
-
-//       // Search for the person using the extracted URI
-//       let person = data.find((person) => {
-//         console.log("Checking person URI: ", person.uri);
-//         return person.uri === uriToSearch;
-//       });
-
-//       // Log the found person
-//       console.log("Found Person: ", person);
-
-//       if (person) {
-//         // You can perform any action with the found person here
-//         alert(`Found ${person.name} with URI ${person.uri}`);
-//       } else {
-//         console.log("Person not found");
-//       }
-//     } catch (error) {
-//       console.error("ERROR: ", error);
-//     } finally {
-//       console.log("All Data Fetched");
-//     }
-//   };
-
-//   fetchTheFilter();
-// };
