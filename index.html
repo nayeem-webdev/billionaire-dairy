@@ -100,6 +100,7 @@
           <!-- More Buttons Section -->
           <div class="space-y-4">
             <button
+              onclick="callAllBillon()"
               id="show-billionaires"
               class="button-bg w-full py-2 rounded-md hover:opacity-80 font-bold"
             >
@@ -161,6 +162,14 @@
               </tr> -->
             </tbody>
           </table>
+          <div class="flex justify-center items-center">
+            <button
+              onclick="loadMore(10)"
+              class="left-bg text-white px-5 py-2 rounded-md my-4 font-bold"
+            >
+              Load More
+            </button>
+          </div>
 
           <!-- Total Wealth Calculation -->
           <div
@@ -172,7 +181,7 @@
           <!-- Modal Background (Overlay) -->
           <div
             id="billionaire-modal"
-            class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center"
+            class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden"
           >
             <!-- Modal Content -->
             <div class="bg-white w-full max-w-3xl p-5 rounded-lg relative">
